@@ -9,7 +9,7 @@ if errorlevel 1 (
     pause
     exit /b 1
 )
-powershell -ExecutionPolicy Bypass -File "%~f0" %*
+powershell -ExecutionPolicy Bypass -Command "& ([ScriptBlock]::Create((Get-Content -LiteralPath '%~f0' -Raw))) %*"
 pause
 exit /b
 #>
@@ -44,7 +44,7 @@ if ($args.Count -gt 0 -and (Test-Path $args[0])) {
 }
 
 # 2) Same folder as this script
-if (-not $dllPath) {
+if (-not $dllPath -and $PSScriptRoot) {
     $candidate = Join-Path $PSScriptRoot $dllName
     if (Test-Path $candidate) { $dllPath = $candidate }
 }
