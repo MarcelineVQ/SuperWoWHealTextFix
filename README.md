@@ -14,12 +14,10 @@ SuperWoW adds floating combat text for heals but it conflicts with built-in floa
 Place the script in the same folder as SuperWoWhook.dll.
 
 **Linux:**
-```
-./patch_superwow.sh
-```
+* `./patch_superwow.sh`
 
 **Windows:**
-Double-click `patch_superwow.cmd`, or drag and drop `SuperWoWhook.dll` onto it.
+* Double-click `patch_superwow.cmd`, or drag and drop `SuperWoWhook.dll` onto it.
 
 ## What it does
 
